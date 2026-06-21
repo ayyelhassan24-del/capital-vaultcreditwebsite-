@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-vault-black: #0a0a0a;
+  --color-vault-gold: #d4af37;
+  --color-vault-cream: #f7f4ed;
+  --color-vault-ink: #16130d;
+  --color-vault-muted: #9a948a;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #16130d;
+}
+
+.container-vault {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-vault {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-vault {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.btn-gold {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #0a0a0a;
+  font-weight: 600;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  border-radius: 9999px;
+  transition: opacity 150ms;
+}
+
+.btn-gold:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  border-radius: 9999px;
+  transition: all 150ms;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: #d4af37;
+  color: #0a0a0a;
+}
+
+.section-padding {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+  }
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #d4af37;
+}
+
+@media (min-width: 768px) {
+  .kicker {
+    font-size: 0.875rem;
+  }
+}
+
+.heading-lg {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+}
+
+@media (min-width: 768px) {
+  .heading-lg {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-lg {
+    font-size: 3.75rem;
+  }
+}
+
+.heading-md {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+}
+
+@media (min-width: 768px) {
+  .heading-md {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-md {
+    font-size: 2.25rem;
+  }
+}
+
+.text-vault-muted {
+  color: #9a948a;
+}
+
+.text-vault-cream {
+  color: #f7f4ed;
+}
+
+.text-vault-gold {
+  color: #d4af37;
+}
+
+.text-vault-ink {
+  color: #16130d;
+}
+
+.text-vault-black {
+  color: #0a0a0a;
+}
+
+.bg-vault-black {
+  background-color: #0a0a0a;
+}
+
+.bg-vault-gold {
+  background-color: #d4af37;
+}
+
+.bg-vault-cream {
+  background-color: #f7f4ed;
+}
+
+.bg-vault-gold\/5 {
+  background-color: rgba(212, 175, 55, 0.05);
+}
+
+.bg-vault-gold\/10 {
+  background-color: rgba(212, 175, 55, 0.10);
+}
+
+.bg-vault-gold\/20 {
+  background-color: rgba(212, 175, 55, 0.20);
+}
+
+.bg-vault-black\/30 {
+  background-color: rgba(10, 10, 10, 0.30);
+}
+
+.bg-vault-black\/80 {
+  background-color: rgba(10, 10, 10, 0.80);
+}
+
+.bg-vault-black\/95 {
+  background-color: rgba(10, 10, 10, 0.95);
+}
+
+.border-hairline {
+  border-color: rgba(212, 175, 55, 0.20);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

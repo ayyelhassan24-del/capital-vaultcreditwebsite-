@@ -1,0 +1,145 @@
+"use client";
+
+import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { submitToGHL } from "@/lib/ghl";
+
+const revenueRanges = [
+  "$500K–$1M",
+  "$1M–$2M",
+  "$2M–$3M",
+  "$3M+",
+];
+
+interface FunnelFormProps {
+  source: string;
+  campaign: string;
+  redirectPath: string;
+  ctaLabel?: string;
+}
+
+export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = "See If I Qualify" }: FunnelFormProps) {
+  const router = useRouter();
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", revenue: "" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+  const turnstileToken = useRef<string | null>(null);
+
+  const validate = () => {
+    const e: Record<string, string> = {};
+    if (!formData.name.trim()) e.name = "Required";
+    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) e.email = "Valid email required";
+    if (!formData.phone.trim()) e.phone = "Required";
+    if (!formData.revenue) e.revenue = "Required";
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+    if (!turnstileToken.current) {
+      setErrors((prev) => ({ ...prev, turnstile: "Please complete the verification." }));
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      await submitToGHL({ ...formData, source, campaign }, turnstileToken.current);
+      router.push(redirectPath);
+    } catch {
+      setErrors((prev) => ({ ...prev, form: "Submission failed. Please try again." }));
+      turnstileToken.current = null;
+      turnstileRef.current?.reset();
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4 bg-vault-black border border-vault-gold/30 rounded-2xl p-6 md:p-8">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Full Name *"
+            className="w-full bg-vault-black border border-hairline rounded-lg px-4 py-3 text-vault-cream placeholder-vault-muted focus:outline-none focus:border-vault-gold transition-colors"
+          />
+          {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+        </div>
+        <div>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Mobile Phone *"
+            className="w-full bg-vault-black border border-hairline rounded-lg px-4 py-3 text-vault-cream placeholder-vault-muted focus:outline-none focus:border-vault-gold transition-colors"
+          />
+          {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
+        </div>
+      </div>
+
+      <div>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Email Address *"
+          className="w-full bg-vault-black border border-hairline rounded-lg px-4 py-3 text-vault-cream placeholder-vault-muted focus:outline-none focus:border-vault-gold transition-colors"
+        />
+        {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+      </div>
+
+      <div>
+        <select
+          name="revenue"
+          value={formData.revenue}
+          onChange={handleChange}
+          className="w-full bg-vault-black border border-hairline rounded-lg px-4 py-3 text-vault-cream focus:outline-none focus:border-vault-gold transition-colors"
+        >
+          <option value="">Annual Revenue *</option>
+          {revenueRanges.map((r) => (
+            <option key={r} value={r}>{r}</option>
+          ))}
+        </select>
+        {errors.revenue && <p className="text-red-400 text-xs mt-1">{errors.revenue}</p>}
+      </div>
+
+      <Turnstile
+        ref={turnstileRef}
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""}
+        onSuccess={(token) => {
+          turnstileToken.current = token;
+          setErrors((prev) => ({ ...prev, turnstile: "" }));
+        }}
+        onExpire={() => { turnstileToken.current = null; }}
+        onError={() => { turnstileToken.current = null; }}
+        options={{ theme: "dark" }}
+      />
+      {errors.turnstile && <p className="text-red-400 text-xs">{errors.turnstile}</p>}
+      {errors.form && <p className="text-red-400 text-sm text-center">{errors.form}</p>}
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="btn-gold w-full disabled:opacity-50 disabled:cursor-not-allowed text-lg py-4"
+      >
+        {isSubmitting ? "Submitting..." : ctaLabel}
+      </button>
+
+      <p className="text-xs text-vault-muted text-center">No credit pull. No fee until funded. Response within 24 hours.</p>
+    </form>
+  );
+}
