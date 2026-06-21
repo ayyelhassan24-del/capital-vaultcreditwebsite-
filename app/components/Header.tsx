@@ -15,9 +15,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: "How It Works", href: "#process" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Testimonials", href: "#testimonials" },
+    { label: "Why Vault", href: "#why-vault" },
+    { label: "Funding", href: "#funding" },
+    { label: "How It Works", href: "#how-we-work" },
     { label: "FAQ", href: "#faq" },
   ];
 
@@ -31,7 +31,7 @@ export default function Header() {
     >
       <nav className="container-vault flex items-center justify-between py-4 md:py-6">
         <a href="/" className="text-xl md:text-2xl font-serif font-bold text-vault-gold">
-          THE CAPITAL VAULT
+          THE VAULT
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -50,7 +50,7 @@ export default function Header() {
           <button
             onClick={() =>
               document
-                .getElementById("pricing")
+                .getElementById("lead-form")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
             className="hidden md:inline-block btn-gold text-sm"
@@ -98,7 +98,7 @@ export default function Header() {
               onClick={() => {
                 setMobileMenuOpen(false);
                 document
-                  .getElementById("pricing")
+                  .getElementById("lead-form")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
               className="btn-gold text-sm w-full"

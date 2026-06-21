@@ -1,51 +1,101 @@
+import Link from "next/link";
+
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-vault-black border-t border-hairline py-16">
-      <div className="container-vault">
-        <div className="text-center mb-12">
-          <h2 className="font-serif font-bold text-vault-gold text-2xl mb-2">The Capital Vault</h2>
-          <p className="text-vault-cream font-medium mb-4">Transforming Credit. Building Dreams.</p>
-          <p className="text-vault-muted text-sm max-w-md mx-auto leading-relaxed">
-            We help entrepreneurs escape credit prison and access real business funding with a proven
-            6-month system.
-          </p>
+    <footer className="bg-vault-black border-t border-hairline">
+      <div className="container-vault section-padding">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16 md:mb-20">
+          <div>
+            <h3 className="font-serif font-bold text-vault-gold text-lg mb-6">
+              THE VAULT
+            </h3>
+            <p className="text-sm text-vault-muted leading-relaxed">
+              Non-dilutive capital for established business operators.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-cream mb-4">
+              Navigation
+            </h4>
+            <ul className="space-y-2">
+              {[
+                { label: "Why Vault", href: "#why-vault" },
+                { label: "Funding", href: "#funding" },
+                { label: "How It Works", href: "#how-we-work" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-vault-muted hover:text-vault-gold transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-cream mb-4">
+              Company
+            </h4>
+            <ul className="space-y-2">
+              {[
+                { label: "About", href: "#" },
+                { label: "Contact", href: "#" },
+                { label: "Blog", href: "#" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-vault-muted hover:text-vault-gold transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-cream mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-2">
+              {[
+                { label: "Privacy", href: "#" },
+                { label: "Terms", href: "#" },
+                { label: "Disclosures", href: "#" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-vault-muted hover:text-vault-gold transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="flex flex-col items-center gap-4 mb-12 text-sm text-vault-muted">
-          <p>
-            <span className="text-vault-cream font-medium">Phone:</span>{" "}
-            <a href="tel:8554424127" className="hover:text-vault-gold transition-colors">
-              (855) 442-4127
-            </a>
-          </p>
-          <p>
-            <span className="text-vault-cream font-medium">Email:</span>{" "}
-            <a
-              href="mailto:support@thecapitalvault.com"
-              className="hover:text-vault-gold transition-colors"
-            >
-              support@thecapitalvault.com
-            </a>
-          </p>
-          <p>
-            <span className="text-vault-cream font-medium">Hours:</span> Mon–Fri · 9am–6pm CST
-          </p>
-        </div>
-
-        <div className="border-t border-hairline pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-vault-muted">
-          <p>© 2025 The Capital Vault. All Rights Reserved.</p>
+        <div className="border-t border-hairline pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-vault-muted">
+          <p>© {currentYear} The Capital Vault. All rights reserved.</p>
           <div className="flex gap-6">
             {[
-              { label: "Privacy Policy", href: "#" },
-              { label: "Terms of Service", href: "#" },
-              { label: "Disclaimer", href: "#" },
-            ].map((link) => (
+              { label: "LinkedIn", href: "#" },
+              { label: "Twitter", href: "#" },
+            ].map((social) => (
               <a
-                key={link.label}
-                href={link.href}
+                key={social.label}
+                href={social.href}
                 className="hover:text-vault-gold transition-colors"
               >
-                {link.label}
+                {social.label}
               </a>
             ))}
           </div>
