@@ -15,13 +15,13 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "The Capital Vault — Non-Dilutive Capital for Established Operators",
+  title: "The Capital Vault — 6-Month Credit Transformation System",
   description:
-    "Connect with 500+ institutional lenders for non-dilutive capital. Fast approvals, no equity loss. For businesses $500K–$3M revenue.",
+    "Go from bad credit to $100K+ in business funding in 62 days. 247+ success stories. Delete It or Don't Pay guarantee.",
   openGraph: {
     title: "The Capital Vault",
     description:
-      "Non-dilutive capital for established operators. Fast approvals, 500+ lenders.",
+      "Go from bad credit to $100K+ in business funding in 62 days. 247+ success stories.",
     type: "website",
   },
 };

@@ -3,7 +3,7 @@ export async function submitToGHL(
     name: string;
     email: string;
     phone: string;
-    revenue: string;
+    revenue?: string;
     message?: string;
     source?: string;
     campaign?: string;

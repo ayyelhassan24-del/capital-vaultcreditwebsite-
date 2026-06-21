@@ -9,52 +9,54 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What's the minimum annual revenue to qualify?",
+    question: "How is this different from other credit repair services?",
     answer:
-      "We typically work with businesses doing $250K–$10M+ annually. Below $250K, options narrow but aren't impossible. Let's talk about your specific situation.",
+      "I built this system as a business owner FOR business owners. We don't just dispute negatives - we position you for business funding, teach you to leverage credit strategically, and give you the exact blueprint I used to go from 510 to launching multiple successful businesses.",
   },
   {
-    question: "Do you require a personal guarantee?",
+    question: "How long does it really take to see results?",
     answer:
-      "No. We structure deals to minimize your personal exposure. Sometimes lenders will ask for one—when that happens, we negotiate limits or collateral swaps to protect your personal assets.",
+      "Most clients see their first deletions within 30-45 days. Significant score improvements typically happen by day 60-90. I personally went from 510 to 697 in 62 days.",
   },
   {
-    question: "How much does this cost?",
+    question: "What if I've tried credit repair before and it didn't work?",
     answer:
-      "We charge no upfront fees. Our compensation comes from lender referral relationships—we only win if you fund. Lender costs vary by product (LOC = 8–12% APR, RBF = 6–8% cost of capital, etc.) and your profile.",
+      "Those generic services use outdated dispute letters that bureaus ignore. We use advanced strategies specifically designed for business owners who need fast results and funding access.",
   },
   {
-    question: "What if I've been rejected by banks before?",
+    question: "Can you really guarantee results?",
     answer:
-      "Good. That's 70% of our client base. Banks use narrow criteria; alternative lenders use different models. We find the lender whose criteria match your actual strength.",
+      "Yes. If we don't remove at least one negative item in 6 months, you get a full refund. We've never had to issue one because our system works.",
   },
   {
-    question: "How long does the whole process take?",
+    question: "Which tier should I choose?",
     answer:
-      "From initial call to funds landed: 5–30 days depending on the product and how clean your financials are. SBAs take longer (20–45 days). RBF and lines of credit move faster (5–15 days).",
+      "Based on your situation and how fast you want results, we recommend choosing the tier that best fits your goals. Most clients start with Tier 2 for balanced progress, while Tier 3 is ideal if you want faster results and priority support.",
   },
 ];
 
-function FAQItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: boolean; onToggle: () => void }) {
+function FAQItem({
+  item,
+  isOpen,
+  onToggle,
+}: {
+  item: FAQItem;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
   return (
     <div className="border-b border-hairline last:border-b-0">
       <button
         onClick={onToggle}
-        className="w-full py-6 md:py-8 flex items-start md:items-center justify-between gap-4 hover:bg-vault-gold/5 -mx-6 md:-mx-10 px-6 md:px-10 transition-colors"
+        className="w-full py-6 flex items-center justify-between gap-4 cursor-pointer"
       >
-        <h3 className="heading-md text-vault-cream text-left">
-          {item.question}
-        </h3>
-        <div
-          className={`text-vault-gold text-2xl flex-shrink-0 transition-transform ${
-            isOpen ? "rotate-45" : ""
-          }`}
-        >
-          +
-        </div>
+        <span className="text-vault-cream font-semibold text-left">{item.question}</span>
+        <span className="text-vault-gold text-2xl flex-shrink-0 leading-none">
+          {isOpen ? "−" : "+"}
+        </span>
       </button>
       {isOpen && (
-        <div className="px-6 md:px-10 pb-6 md:pb-8">
+        <div className="pb-6">
           <p className="text-vault-muted leading-relaxed">{item.answer}</p>
         </div>
       )}
@@ -63,29 +65,25 @@ function FAQItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: boolean; o
 }
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section id="faq" className="section-padding bg-vault-gold/5 border-y border-hairline">
+    <section id="faq" className="section-padding bg-vault-black">
       <div className="container-vault">
-        <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
-          <div className="md:col-span-1 scroll-reveal">
-            <p className="kicker text-vault-gold mb-4">QUESTIONS</p>
-            <h2 className="heading-md text-vault-cream">Frequently Asked</h2>
-          </div>
+        <div className="text-center mb-12 scroll-reveal">
+          <p className="kicker text-vault-gold mb-4">FAQ</p>
+          <h2 className="heading-lg text-vault-cream">Frequently Asked Questions</h2>
+        </div>
 
-          <div className="md:col-span-2 scroll-reveal delay-1">
-            <div className="divide-y divide-hairline -mx-6 md:-mx-0">
-              {faqs.map((faq, idx) => (
-                <FAQItem
-                  key={faq.question}
-                  item={faq}
-                  isOpen={openIndex === idx}
-                  onToggle={() => setOpenIndex(openIndex === idx ? -1 : idx)}
-                />
-              ))}
-            </div>
-          </div>
+        <div className="max-w-3xl mx-auto scroll-reveal delay-1">
+          {faqs.map((faq, idx) => (
+            <FAQItem
+              key={faq.question}
+              item={faq}
+              isOpen={openIndex === idx}
+              onToggle={() => setOpenIndex(openIndex === idx ? -1 : idx)}
+            />
+          ))}
         </div>
       </div>
     </section>
