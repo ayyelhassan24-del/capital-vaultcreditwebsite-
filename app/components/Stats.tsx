@@ -70,7 +70,7 @@ export default function Stats() {
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-vault-gold/5 border-t border-b border-hairline"
+      className="section-padding border-t border-vault-border"
     >
       <div className="container-vault">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">

@@ -1,0 +1,669 @@
+<!-- MIDJOURNEY PROMPT:
+A lone businessperson in a dark suit standing at floor-to-ceiling bank windows, back to camera, city lights below, single sheet of paper in hand (rejection letter), dramatic chiaroscuro lighting, near-black background, golden ambient light from city below, cinematic, 4K, editorial photography style, no text, ultra-sharp, moody, high contrast --ar 1:1 --style raw --v 6.1
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capital Vault — Fear Ad — All Formats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #111116;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      background: #0B0B0F;
+      padding: 12px 20px;
+      display: flex;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(212, 169, 75, 0.15);
+    }
+
+    nav a {
+      color: #D4A94B;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid rgba(212, 169, 75, 0.25);
+    }
+
+    nav a:hover {
+      background: rgba(212, 169, 75, 0.08);
+    }
+
+    /* ─── FORMAT WRAPPER ─── */
+    .format-section {
+      padding: 64px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .format-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(200, 200, 200, 0.35);
+      margin-bottom: 20px;
+    }
+
+    /* ─── SHARED AD PRIMITIVES ─── */
+    .ad-brand {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #D4A94B;
+    }
+
+    .ad-kicker {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: rgba(200, 200, 200, 0.45);
+    }
+
+    .ad-rule {
+      background: #D4A94B;
+      flex-shrink: 0;
+    }
+
+    .ad-headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+    }
+
+    .ad-body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      color: #C8C8C8;
+    }
+
+    .ad-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #D4A94B;
+      background: transparent;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .ad-url {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: rgba(200, 200, 200, 0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ════════════════════════════════════════
+       FORMAT 1 — 1:1  1080×1080  Feed Square
+       ════════════════════════════════════════ */
+    #ad-1x1 {
+      width: 1080px;
+      height: 1080px;
+      background: #0B0B0F;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212, 169, 75, 0.12);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    #ad-1x1 .ad-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 36px 56px 0;
+    }
+
+    #ad-1x1 .ad-brand { font-size: 11px; }
+    #ad-1x1 .ad-kicker { font-size: 11px; }
+
+    #ad-1x1 .ad-image-placeholder {
+      width: 300px;
+      height: 200px;
+      border: 1px solid #D4A94B;
+      margin: 52px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    #ad-1x1 .ad-image-placeholder span {
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(212, 169, 75, 0.55);
+      letter-spacing: 0.06em;
+      text-align: center;
+      line-height: 1.6;
+      padding: 0 16px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    #ad-1x1 .ad-content {
+      display: flex;
+      flex-direction: column;
+      padding: 0 80px;
+      margin-top: 60px;
+    }
+
+    #ad-1x1 .ad-rule {
+      width: 48px;
+      height: 1.5px;
+      margin-bottom: 36px;
+    }
+
+    #ad-1x1 .ad-headline {
+      font-size: 64px;
+      line-height: 1.08;
+      margin-bottom: 32px;
+    }
+
+    #ad-1x1 .ad-body {
+      font-size: 18px;
+      max-width: 780px;
+    }
+
+    #ad-1x1 .ad-cta-row {
+      padding: 0 80px 56px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: auto;
+    }
+
+    #ad-1x1 .ad-cta-btn {
+      font-size: 13px;
+      padding: 18px 48px;
+    }
+
+    #ad-1x1 .ad-url { font-size: 12px; }
+
+    /* ════════════════════════════════════════
+       FORMAT 2 — 4:5  1080×1350  Instagram Portrait
+       ════════════════════════════════════════ */
+    #ad-4x5 {
+      width: 1080px;
+      height: 1350px;
+      background: #0B0B0F;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212, 169, 75, 0.12);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+    }
+
+    #ad-4x5 .ad-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 64px 0;
+    }
+
+    #ad-4x5 .ad-brand { font-size: 11px; }
+    #ad-4x5 .ad-kicker { font-size: 11px; }
+
+    #ad-4x5 .ad-image-placeholder {
+      width: 340px;
+      height: 240px;
+      border: 1px solid #D4A94B;
+      margin: 64px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    #ad-4x5 .ad-image-placeholder span {
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(212, 169, 75, 0.55);
+      letter-spacing: 0.06em;
+      text-align: center;
+      line-height: 1.6;
+      padding: 0 16px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    #ad-4x5 .ad-content {
+      display: flex;
+      flex-direction: column;
+      padding: 0 88px;
+      margin-top: 72px;
+    }
+
+    #ad-4x5 .ad-rule {
+      width: 52px;
+      height: 1.5px;
+      margin-bottom: 40px;
+    }
+
+    #ad-4x5 .ad-headline {
+      font-size: 72px;
+      line-height: 1.06;
+      margin-bottom: 36px;
+    }
+
+    #ad-4x5 .ad-body {
+      font-size: 20px;
+      max-width: 820px;
+    }
+
+    #ad-4x5 .ad-cta-row {
+      padding: 0 88px 72px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: auto;
+    }
+
+    #ad-4x5 .ad-cta-btn {
+      font-size: 13px;
+      padding: 20px 52px;
+    }
+
+    #ad-4x5 .ad-url { font-size: 12px; }
+
+    /* ════════════════════════════════════════
+       FORMAT 3 — 9:16  1080×1920  Stories / Reels
+       ════════════════════════════════════════ */
+    #ad-9x16 {
+      width: 1080px;
+      height: 1920px;
+      background: #0B0B0F;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212, 169, 75, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #ad-9x16 .ad-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 72px 72px 0;
+      flex-shrink: 0;
+    }
+
+    #ad-9x16 .ad-brand { font-size: 13px; }
+    #ad-9x16 .ad-kicker { font-size: 13px; }
+
+    /* Headline sits ABOVE image in 9:16 */
+    #ad-9x16 .ad-content {
+      display: flex;
+      flex-direction: column;
+      padding: 0 96px;
+      margin-top: 96px;
+      flex-shrink: 0;
+    }
+
+    #ad-9x16 .ad-rule {
+      width: 56px;
+      height: 2px;
+      margin-bottom: 44px;
+    }
+
+    #ad-9x16 .ad-headline {
+      font-size: 96px;
+      line-height: 1.04;
+      margin-bottom: 40px;
+    }
+
+    #ad-9x16 .ad-body {
+      font-size: 28px;
+      line-height: 1.6;
+      max-width: 900px;
+    }
+
+    /* Image sits after the headline block */
+    #ad-9x16 .ad-image-placeholder {
+      width: 520px;
+      height: 360px;
+      border: 1px solid #D4A94B;
+      margin: 80px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    #ad-9x16 .ad-image-placeholder span {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(212, 169, 75, 0.55);
+      letter-spacing: 0.06em;
+      text-align: center;
+      line-height: 1.6;
+      padding: 0 24px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* CTA pinned 120px from bottom */
+    #ad-9x16 .ad-cta-row {
+      position: absolute;
+      bottom: 120px;
+      left: 0;
+      right: 0;
+      padding: 0 96px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    #ad-9x16 .ad-cta-btn {
+      font-size: 16px;
+      padding: 24px 64px;
+    }
+
+    #ad-9x16 .ad-url { font-size: 14px; }
+
+    /* ════════════════════════════════════════
+       FORMAT 4 — 16:9  1920×1080  YouTube / Facebook Horizontal
+       ════════════════════════════════════════ */
+    #ad-16x9 {
+      width: 1920px;
+      height: 1080px;
+      background: #0B0B0F;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212, 169, 75, 0.12);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Left half: copy */
+    #ad-16x9 .ad-left {
+      display: flex;
+      flex-direction: column;
+      padding: 80px 96px;
+      position: relative;
+    }
+
+    /* Subtle vertical separator */
+    #ad-16x9 .ad-left::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 80px;
+      bottom: 80px;
+      width: 1px;
+      background: rgba(212, 169, 75, 0.12);
+    }
+
+    #ad-16x9 .ad-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: auto;
+    }
+
+    #ad-16x9 .ad-brand { font-size: 11px; }
+    #ad-16x9 .ad-kicker { font-size: 11px; }
+
+    #ad-16x9 .ad-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    #ad-16x9 .ad-rule {
+      width: 48px;
+      height: 1.5px;
+      margin-bottom: 36px;
+    }
+
+    #ad-16x9 .ad-headline {
+      font-size: 76px;
+      line-height: 1.06;
+      margin-bottom: 36px;
+    }
+
+    #ad-16x9 .ad-body {
+      font-size: 22px;
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    #ad-16x9 .ad-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    #ad-16x9 .ad-cta-btn {
+      font-size: 13px;
+      padding: 20px 52px;
+    }
+
+    #ad-16x9 .ad-url { font-size: 12px; }
+
+    /* Right half: image */
+    #ad-16x9 .ad-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 96px;
+    }
+
+    #ad-16x9 .ad-image-placeholder {
+      width: 640px;
+      height: 480px;
+      border: 1px solid #D4A94B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #ad-16x9 .ad-image-placeholder span {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(212, 169, 75, 0.55);
+      letter-spacing: 0.06em;
+      text-align: center;
+      line-height: 1.6;
+      padding: 0 24px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ─── SCROLL SECTIONS ─── */
+    .format-section {
+      padding: 64px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: auto;
+    }
+
+    .format-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(200, 200, 200, 0.35);
+      margin-bottom: 20px;
+      align-self: flex-start;
+      margin-left: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#1x1">1:1 Feed</a>
+    <a href="#4x5">4:5 Feed</a>
+    <a href="#9x16">9:16 Story</a>
+    <a href="#16x9">16:9 YouTube</a>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       SECTION 1 — 1:1  1080×1080  Facebook/Instagram Feed
+       ══════════════════════════════════════ -->
+  <section id="1x1" class="format-section" data-format="1x1">
+    <p class="format-label">1:1 — 1080×1080 — Facebook / Instagram Feed</p>
+
+    <div id="ad-1x1">
+
+      <div class="ad-topbar">
+        <span class="ad-brand">Capital Vault</span>
+        <span class="ad-kicker">Capital Positioning</span>
+      </div>
+
+      <div class="ad-image-placeholder">
+        <span>[IMAGE — see midjourney-prompts.md]</span>
+      </div>
+
+      <div class="ad-content">
+        <div class="ad-rule"></div>
+        <h1 class="ad-headline">Banks Said No.<br>Your File Says Why.</h1>
+        <p class="ad-body">Most operators with strong revenue get denied not because the business is weak — because their capital profile is misread. The bank isn't saying no to you. It's saying no to how you're positioned.</p>
+      </div>
+
+      <div class="ad-cta-row">
+        <a class="ad-cta-btn" href="https://hvac.thecapitalvault.com/">DM Me FUNDED</a>
+        <span class="ad-url">thecapitalvault.com</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 2 — 4:5  1080×1350  Instagram Feed Portrait
+       ══════════════════════════════════════ -->
+  <section id="4x5" class="format-section" data-format="4x5">
+    <p class="format-label">4:5 — 1080×1350 — Instagram Feed (Best Performing)</p>
+
+    <div id="ad-4x5">
+
+      <div class="ad-topbar">
+        <span class="ad-brand">Capital Vault</span>
+        <span class="ad-kicker">Capital Positioning</span>
+      </div>
+
+      <div class="ad-image-placeholder">
+        <span>[IMAGE — see midjourney-prompts.md]</span>
+      </div>
+
+      <div class="ad-content">
+        <div class="ad-rule"></div>
+        <h1 class="ad-headline">Banks Said No.<br>Your File Says Why.</h1>
+        <p class="ad-body">Most operators with strong revenue get denied not because the business is weak — because their capital profile is misread. The bank isn't saying no to you. It's saying no to how you're positioned.</p>
+      </div>
+
+      <div class="ad-cta-row">
+        <a class="ad-cta-btn" href="https://hvac.thecapitalvault.com/">DM Me FUNDED</a>
+        <span class="ad-url">thecapitalvault.com</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 3 — 9:16  1080×1920  Stories / Reels
+       ══════════════════════════════════════ -->
+  <section id="9x16" class="format-section" data-format="9x16">
+    <p class="format-label">9:16 — 1080×1920 — Stories &amp; Reels</p>
+
+    <div id="ad-9x16">
+
+      <div class="ad-topbar">
+        <span class="ad-brand">Capital Vault</span>
+        <span class="ad-kicker">Capital Positioning</span>
+      </div>
+
+      <!-- Headline ABOVE image per 9:16 spec -->
+      <div class="ad-content">
+        <div class="ad-rule"></div>
+        <h1 class="ad-headline">Banks Said No.<br>Your File<br>Says Why.</h1>
+        <p class="ad-body">Most operators with strong revenue get denied not because the business is weak — because their capital profile is misread. The bank isn't saying no to you. It's saying no to how you're positioned.</p>
+      </div>
+
+      <div class="ad-image-placeholder">
+        <span>[IMAGE — see midjourney-prompts.md]</span>
+      </div>
+
+      <!-- CTA pinned 120px from bottom -->
+      <div class="ad-cta-row">
+        <a class="ad-cta-btn" href="https://hvac.thecapitalvault.com/">DM Me FUNDED</a>
+        <span class="ad-url">thecapitalvault.com</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 4 — 16:9  1920×1080  YouTube Pre-roll / Facebook Horizontal
+       ══════════════════════════════════════ -->
+  <section id="16x9" class="format-section" data-format="16x9">
+    <p class="format-label">16:9 — 1920×1080 — YouTube Pre-roll / Facebook Horizontal</p>
+
+    <div id="ad-16x9">
+
+      <!-- Left half: copy -->
+      <div class="ad-left">
+
+        <div class="ad-topbar">
+          <span class="ad-brand">Capital Vault</span>
+          <span class="ad-kicker">Capital Positioning</span>
+        </div>
+
+        <div class="ad-content">
+          <div class="ad-rule"></div>
+          <h1 class="ad-headline">Banks Said No.<br>Your File Says Why.</h1>
+          <p class="ad-body">Most operators with strong revenue get denied not because the business is weak — because their capital profile is misread. The bank isn't saying no to you. It's saying no to how you're positioned. We reframe your file so the next lender sees a different story.</p>
+
+          <div class="ad-cta-row">
+            <a class="ad-cta-btn" href="https://hvac.thecapitalvault.com/">DM Me FUNDED</a>
+            <span class="ad-url">thecapitalvault.com</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right half: image -->
+      <div class="ad-right">
+        <div class="ad-image-placeholder">
+          <span>[IMAGE — see midjourney-prompts.md]</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-vault-black border-t border-hairline">
+    <footer className="bg-vault-bg border-t border-vault-border">
       <div className="container-vault section-padding">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16 md:mb-20">
           <div>
@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-cream mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-ink mb-4">
               Navigation
             </h4>
             <ul className="space-y-2">
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-cream mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-ink mb-4">
               Company
             </h4>
             <ul className="space-y-2">
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-cream mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-vault-ink mb-4">
               Legal
             </h4>
             <ul className="space-y-2">
@@ -83,7 +83,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-hairline pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-vault-muted">
+        <div className="border-t border-vault-border pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-vault-muted">
           <p>© {currentYear} The Capital Vault. All rights reserved.</p>
           <div className="flex gap-6">
             {[

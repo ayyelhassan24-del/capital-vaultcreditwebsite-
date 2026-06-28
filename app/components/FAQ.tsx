@@ -37,12 +37,12 @@ const faqs: FAQItem[] = [
 
 function FAQItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: boolean; onToggle: () => void }) {
   return (
-    <div className="border-b border-hairline last:border-b-0">
+    <div className="border-b border-vault-border last:border-b-0">
       <button
         onClick={onToggle}
         className="w-full py-6 md:py-8 flex items-start md:items-center justify-between gap-4 hover:bg-vault-gold/5 -mx-6 md:-mx-10 px-6 md:px-10 transition-colors"
       >
-        <h3 className="heading-md text-vault-cream text-left">
+        <h3 className="heading-md text-vault-ink text-left">
           {item.question}
         </h3>
         <div
@@ -66,12 +66,12 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="section-padding bg-vault-gold/5 border-y border-hairline">
+    <section id="faq" className="section-padding bg-vault-gold/5 border-y border-vault-border">
       <div className="container-vault">
         <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
           <div className="md:col-span-1 scroll-reveal">
             <p className="kicker text-vault-gold mb-4">QUESTIONS</p>
-            <h2 className="heading-md text-vault-cream">Frequently Asked</h2>
+            <h2 className="heading-md text-vault-ink">Frequently Asked</h2>
           </div>
 
           <div className="md:col-span-2 scroll-reveal delay-1">

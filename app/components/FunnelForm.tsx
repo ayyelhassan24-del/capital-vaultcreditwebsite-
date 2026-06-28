@@ -54,8 +54,9 @@ export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = 
     try {
       await submitToGHL({ ...formData, source, campaign }, turnstileToken.current);
       router.push(redirectPath);
-    } catch {
-      setErrors((prev) => ({ ...prev, form: "Submission failed. Please try again." }));
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Submission failed.";
+      setErrors((prev) => ({ ...prev, form: msg.includes("Bot") ? "Verification failed — please refresh and try again." : "Submission failed. Please try again." }));
       turnstileToken.current = null;
       turnstileRef.current?.reset();
     } finally {
@@ -64,7 +65,7 @@ export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = 
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 bg-vault-black border border-vault-gold/30 rounded-2xl p-6 md:p-8">
+    <form onSubmit={handleSubmit} className="space-y-4 bg-vault-black border border-vault-gold\/40 rounded-2xl p-6 md:p-8">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <input
@@ -73,7 +74,7 @@ export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = 
             value={formData.name}
             onChange={handleChange}
             placeholder="Full Name *"
-            className="w-full bg-vault-black border border-hairline rounded-lg px-4 py-3 text-vault-cream placeholder-vault-muted focus:outline-none focus:border-vault-gold transition-colors"
+            className="input-vault"
           />
           {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
         </div>
@@ -84,7 +85,7 @@ export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = 
             value={formData.phone}
             onChange={handleChange}
             placeholder="Mobile Phone *"
-            className="w-full bg-vault-black border border-hairline rounded-lg px-4 py-3 text-vault-cream placeholder-vault-muted focus:outline-none focus:border-vault-gold transition-colors"
+            className="input-vault"
           />
           {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
         </div>
@@ -97,7 +98,7 @@ export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = 
           value={formData.email}
           onChange={handleChange}
           placeholder="Email Address *"
-          className="w-full bg-vault-black border border-hairline rounded-lg px-4 py-3 text-vault-cream placeholder-vault-muted focus:outline-none focus:border-vault-gold transition-colors"
+          className="input-vault"
         />
         {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
       </div>
@@ -107,7 +108,7 @@ export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = 
           name="revenue"
           value={formData.revenue}
           onChange={handleChange}
-          className="w-full bg-vault-black border border-hairline rounded-lg px-4 py-3 text-vault-cream focus:outline-none focus:border-vault-gold transition-colors"
+          className="input-vault"
         >
           <option value="">Annual Revenue *</option>
           {revenueRanges.map((r) => (
@@ -128,8 +129,8 @@ export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = 
         onError={() => { turnstileToken.current = null; }}
         options={{ theme: "dark" }}
       />
-      {errors.turnstile && <p className="text-red-400 text-xs">{errors.turnstile}</p>}
-      {errors.form && <p className="text-red-400 text-sm text-center">{errors.form}</p>}
+      {errors.turnstile && <p className="text-red-400 text-sm font-medium py-2 px-3 bg-red-400/10 rounded-lg border border-red-400/30">{errors.turnstile}</p>}
+      {errors.form && <p className="text-red-400 text-sm font-medium py-2 px-3 bg-red-400/10 rounded-lg border border-red-400/30 text-center">{errors.form}</p>}
 
       <button
         type="submit"

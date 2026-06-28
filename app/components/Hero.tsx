@@ -1,70 +1,62 @@
 "use client";
 
-import VSLPlayer from "@/components/VSLPlayer";
+import Link from "next/link";
+
+const metrics = [
+  { value: "$80M+",   label: "Capital Deployed" },
+  { value: "500+",    label: "Institutional Lenders" },
+  { value: "16 Days", label: "Average Close" },
+  { value: "94%",     label: "Approval Rate" },
+];
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen pt-20 md:pt-24 flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-vault-black via-vault-black/80 to-vault-black"
-        style={{
-          backgroundImage: `linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.85) 50%, rgba(10, 10, 10, 0.95) 100%)`,
-        }}
-      />
+    <section className="relative w-full min-h-[100dvh] flex items-center overflow-hidden bg-vault-bg">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 lg:px-8 pt-24 pb-20">
+        <div className="grid md:grid-cols-[58%_42%] gap-12 lg:gap-20 items-center">
 
-      <div className="relative z-10 container-vault">
-        <div className="grid md:grid-cols-[60%_40%] gap-12 lg:gap-16 items-center">
-          <div className="space-y-6 md:space-y-8 scroll-reveal text-center md:text-left">
-            <p className="kicker text-vault-gold">INSTITUTIONAL CAPITAL</p>
-
-            <h1 className="heading-lg text-vault-cream">
-              500+ Lenders. <br />
-              Non-Dilutive Capital. <br />
-              5–23 Days.
+          {/* Left — copy */}
+          <div className="space-y-7 scroll-reveal">
+            <h1 className="heading-display text-vault-ink">
+              Make lenders{" "}
+              <span className="text-vault-gold">compete</span>
+              <br />for your capital.
             </h1>
 
-            <p className="text-lg md:text-xl text-vault-muted leading-relaxed">
-              We connect established business operators with institutional lenders
-              who fund fast, ask no equity questions, and close in weeks instead of
-              months.
+            <p className="text-[1.05rem] text-vault-muted leading-relaxed max-w-[44ch]">
+              One file goes in front of 500+ institutional lenders. You keep
+              every point of equity and take the best rate on the table.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("lead-form")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="btn-gold"
-              >
-                Get Funded
-              </button>
-              <a href="#how-we-work" className="btn-outline">
-                See How
-              </a>
-            </div>
-
-            <div className="pt-8 border-t border-hairline">
-              <p className="text-xs md:text-sm text-vault-muted uppercase tracking-widest mb-6">
-                Trusted by operators building real companies
-              </p>
-              <div className="flex flex-wrap gap-8 md:gap-12">
-                {["$500K–$3M ARR", "Bootstrapped", "Profitable"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-sm text-vault-muted font-semibold"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-3 pt-1">
+              <Link href="#lead-form" className="btn-primary text-[0.9rem]">
+                Request a consultation &rarr;
+              </Link>
+              <Link href="#funding" className="btn-secondary text-[0.9rem]">
+                View funding options
+              </Link>
             </div>
           </div>
 
-          <div className="hidden md:flex scroll-reveal delay-1 items-center justify-center">
-            <VSLPlayer />
+          {/* Right — deal metrics panel */}
+          <div className="hidden md:block scroll-reveal delay-2">
+            <div className="border border-vault-gold/30">
+              {metrics.map((m, i) => (
+                <div
+                  key={m.label}
+                  className={`px-10 py-8 ${i < metrics.length - 1 ? "border-b border-vault-border" : ""}`}
+                >
+                  <p className="font-serif text-4xl lg:text-5xl font-bold text-vault-gold leading-none mb-2">
+                    {m.value}
+                  </p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-vault-muted">
+                    {m.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
+
         </div>
       </div>
     </section>

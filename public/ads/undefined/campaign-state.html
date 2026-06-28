@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign State — undefined</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0B0B0F; color: #FFFFFF; font-family: 'Inter', sans-serif; min-height: 100vh; padding: 48px 32px; }
+    .header { border-bottom: 1px solid #D4A94B; padding-bottom: 24px; margin-bottom: 40px; }
+    .header h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+    .header .subtitle { color: #888; font-size: 13px; margin-top: 6px; }
+    .status-badge { display: inline-block; padding: 4px 14px; border: 1.5px solid #555; color: #555; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 12px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+    .card { border: 1px solid #1E1E24; padding: 24px; }
+    .card-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 10px; }
+    .card-value { font-size: 14px; color: #C8C8C8; word-break: break-all; }
+    .card-value.mono { font-family: 'Courier New', monospace; font-size: 13px; color: #D4A94B; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 20px; border-left: 3px solid #D4A94B; padding-left: 12px; }
+    .variant { border: 1px solid #1E1E24; padding: 20px; margin-bottom: 12px; }
+    .angle { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #D4A94B; margin-bottom: 8px; }
+    .headline { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 8px; }
+    .body-text { font-size: 13px; color: #888; line-height: 1.6; }
+    .footer { border-top: 1px solid #1E1E24; padding-top: 20px; font-size: 11px; color: #444; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Campaign State</h1>
+    <div class="subtitle">undefined &mdash; Avatar: Denied Operator &mdash; Hook: undefined</div>
+    <div class="status-badge">FAILED</div>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="card-label">Creative ID</div><div class="card-value mono">—</div></div>
+    <div class="card"><div class="card-label">Ad ID</div><div class="card-value mono">—</div></div>
+    <div class="card"><div class="card-label">Ad Set</div><div class="card-value">HVAC Ads - Copy 2</div></div>
+    <div class="card"><div class="card-label">Page</div><div class="card-value">Realceoabu Connected Page</div></div>
+    <div class="card"><div class="card-label">Ad Status</div><div class="card-value">PAUSED — activate in Ads Manager</div></div>
+    <div class="card"><div class="card-label">Destination</div><div class="card-value mono">https://hvac.thecapitalvault.com/</div></div>
+  </div>
+  <h2>DCO Variants</h2>
+  <div class="variant"><div class="angle">fear</div><div class="headline">Banks Said No. Your File Says Why.</div><div class="body-text">Most operators with strong revenue get denied not because the business is weak — because their capital profile is misread. The bank isn't saying no to you. It's saying no to how you're positioned.</div></div><div class="variant"><div class="angle">result</div><div class="headline">$600K Revenue. Still Told No. Fixed.</div><div class="body-text">Operators doing real numbers get declined every week. Not because they don't qualify — because nobody showed them what the file actually says. One audit changed the outcome.</div></div><div class="variant"><div class="angle">curiosity</div><div class="headline">Banks Score You. You Don't Know How.</div><div class="body-text">There's a profile the bank builds before you walk in. Most operators have never seen it. What's in it determines the answer before you say a word. Yours might already be fixable.</div></div>
+  <div class="card" style="border-color:#555;margin-top:40px;"><div class="card-label">Errors</div><div class="card-value" style="font-size:12px;color:#888;">Meta access token has expired (session expired Wednesday, 24-Jun-26 00:00:00 PDT). The token stored in /Users/abudagoat/second-brain/.env as ACCESS_TOKEN is a short-lived user token that expired at midnight. The meta CLI reads this env var directly. To fix: run `meta auth login` or generate a new long-lived token from Meta Business Manager (Business Settings → System Users → Generate Token) and update ACCESS_TOKEN in .env. The DCO creative command itself is valid — re-run after refreshing the token.<br>API error (190): Error validating access token: Session has expired on Wednesday, 24-Jun-26 00:00:00 PDT. The current time is Wednesday, 24-Jun-26 01:20:48 PDT. Refresh your Meta access token in /Users/abudagoat/second-brain/.env before retrying.</div></div>
+  <div class="footer">Generated by ad-creative-strategist &mdash; undefined &mdash; Ad is PAUSED. Swap placeholder image with Midjourney output, then activate.</div>
+</body>
+</html>

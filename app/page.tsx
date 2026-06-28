@@ -6,6 +6,7 @@ import WhyVault from "@/components/WhyVault";
 import FundingMenu from "@/components/FundingMenu";
 import HowWeWork from "@/components/HowWeWork";
 import FAQ from "@/components/FAQ";
+import ConsultationDetails from "@/components/ConsultationDetails";
 import LeadForm from "@/components/LeadForm";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -22,6 +23,7 @@ export default function Home() {
         <FundingMenu />
         <HowWeWork />
         <FAQ />
+        <ConsultationDetails />
         <LeadForm />
         <CTA />
       </main>

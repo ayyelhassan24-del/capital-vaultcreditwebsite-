@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capital Vault — Administrative Fee Agreement</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #ffffff;
+      color: #111111;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 40px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #16130d;
+      padding-bottom: 20px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #16130d;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: #666;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .contact-block {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.5px;
+      color: #444;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    .contact-block a {
+      color: #c8a800;
+      text-decoration: none;
+    }
+
+    /* ── Section Labels ── */
+    .section-label {
+      background: #16130d;
+      color: #c8a800;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+    }
+
+    /* ── Fee Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 36px;
+    }
+
+    thead th {
+      background: #f5f0e8;
+      color: #16130d;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      text-align: left;
+      border-bottom: 2px solid #c8a800;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #e8e2d6;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody td {
+      padding: 10px 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #222;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #faf8f4;
+    }
+
+    /* ── Signature Block ── */
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 36px;
+      margin-bottom: 32px;
+    }
+
+    .sig-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sig-field label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .sig-line {
+      border-bottom: 1px solid #333;
+      height: 32px;
+    }
+
+    .sig-full {
+      grid-column: 1 / -1;
+    }
+
+    /* ── Legal Copy ── */
+    .legal {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.5px;
+      color: #555;
+      line-height: 1.65;
+      border-top: 1px solid #e0d8c8;
+      padding-top: 20px;
+      margin-top: 8px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 36px;
+      padding-top: 14px;
+      border-top: 1px solid #e0d8c8;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.5px;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media print {
+      body { padding: 28px 32px; }
+      .section-label { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      thead th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <div class="header">
+    <div class="brand">
+      <!-- CV Logo Mark (inline SVG) -->
+      <svg width="52" height="52" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer ring -->
+        <circle cx="100" cy="100" r="88" stroke="#16130d" stroke-width="7"/>
+        <!-- Inner gold ring -->
+        <circle cx="100" cy="100" r="68" stroke="#c8a800" stroke-width="3"/>
+        <!-- 8 bolt markers -->
+        <circle cx="100" cy="12"  r="5.5" fill="#16130d"/>
+        <circle cx="162.23" cy="37.77" r="5.5" fill="#16130d"/>
+        <circle cx="188" cy="100" r="5.5" fill="#16130d"/>
+        <circle cx="162.23" cy="162.23" r="5.5" fill="#16130d"/>
+        <circle cx="100" cy="188" r="5.5" fill="#16130d"/>
+        <circle cx="37.77" cy="162.23" r="5.5" fill="#16130d"/>
+        <circle cx="12"  cy="100" r="5.5" fill="#16130d"/>
+        <circle cx="37.77" cy="37.77"  r="5.5" fill="#16130d"/>
+        <!-- Cardinal notch lines -->
+        <line x1="100" y1="90"  x2="100" y2="12"  stroke="#16130d" stroke-width="3"/>
+        <line x1="110" y1="100" x2="188" y2="100" stroke="#16130d" stroke-width="3"/>
+        <line x1="100" y1="110" x2="100" y2="188" stroke="#16130d" stroke-width="3"/>
+        <line x1="90"  y1="100" x2="12"  y2="100" stroke="#16130d" stroke-width="3"/>
+        <!-- CV letters -->
+        <text x="54" y="122" font-family="Georgia, serif" font-size="58" font-weight="700" fill="#16130d">C</text>
+        <text x="98" y="122" font-family="Georgia, serif" font-size="58" font-weight="700" fill="#c8a800">V</text>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">Capital Vault</span>
+        <span class="brand-tagline">Strategic Capital Advisory</span>
+      </div>
+    </div>
+    <div class="contact-block">
+      <a href="mailto:approvals@capitalvault.co">approvals@capitalvault.co</a><br/>
+      www.capitalvault.co<br/>
+      +1 (980) 470-3330
+    </div>
+  </div>
+
+  <!-- ── Service Addendum ── -->
+  <div class="section-label">Service Addendum</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Amount</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>$5K – $249K</td><td>2.5%</td></tr>
+      <tr><td>$250K – $749K</td><td>2.0%</td></tr>
+      <tr><td>$750K – $1.5MM</td><td>1.5%</td></tr>
+      <tr><td>$1.5MM – $2.5MM</td><td>1.0%</td></tr>
+      <tr><td>$2.5MM – $10MM</td><td>0.5% (One Half %)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── Addendum Acceptance ── -->
+  <div class="section-label">Addendum Acceptance</div>
+
+  <div class="sig-grid">
+    <div class="sig-field">
+      <div class="sig-line"></div>
+      <label>First Name</label>
+    </div>
+    <div class="sig-field">
+      <div class="sig-line"></div>
+      <label>Last Name</label>
+    </div>
+    <div class="sig-field">
+      <div class="sig-line"></div>
+      <label>Company</label>
+    </div>
+    <div class="sig-field">
+      <div class="sig-line"></div>
+      <label>Date Signed</label>
+    </div>
+    <div class="sig-field sig-full">
+      <div class="sig-line"></div>
+      <label>Signature</label>
+    </div>
+  </div>
+
+  <!-- ── Legal Copy ── -->
+  <div class="legal">
+    By signing above, I agree to pay a fee for the services provided hereunder by Capital Vault, LLC for securing, and or facilitating funding for the business listed. The Service Fee is assessed on the secured facility amount for credit lines and the actual funded contract amount for all other loans or advance products calculated in dollars at the % shown on the above schedule. The parties agree that the Service Fee represents the fair market value of the services provided by Capital Vault, LLC and is a one time transaction to be processed after funding is completed and not a recurring fee. Products offered consist of term loans, lines of credit, equipment financing, commercial mortgages, invoice factoring, SBA loans, business cash advance &amp; more. If funding is not completed for any reason, said fee will not be processed.
+  </div>
+
+  <!-- ── Footer ── -->
+  <div class="footer">
+    <span>approvals@capitalvault.co</span>
+    <span>www.capitalvault.co</span>
+    <span>+1 (980) 470-3330</span>
+  </div>
+
+</body>
+</html>

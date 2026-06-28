@@ -1,0 +1,665 @@
+<!-- MIDJOURNEY PROMPT:
+Extreme close-up of a partially open confidential manila folder on an obsidian black desk, interior pages barely visible, gold foil letterhead catching directional light, one hand (well-dressed cuff visible) holding the folder open slightly, deep shadows, mystery and revelation, editorial financial photography, 4K, no text legible, dramatic lighting, luxury atmosphere --ar 1:1 --style raw --v 6.1
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capital Vault — Curiosity Ad — All Formats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #111116;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── NAV ── */
+    .format-nav {
+      background: #0B0B0F;
+      padding: 12px 20px;
+      display: flex;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(212, 169, 75, 0.15);
+    }
+
+    .format-nav a {
+      color: #D4A94B;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.15s;
+    }
+
+    .format-nav a:hover {
+      opacity: 1;
+    }
+
+    /* ── FORMAT SECTIONS ── */
+    .format-section {
+      padding: 60px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .format-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(212, 169, 75, 0.5);
+    }
+
+    /* ── SHARED DESIGN TOKENS ── */
+    .ad-brand {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #D4A94B;
+    }
+
+    .ad-kicker {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: rgba(200, 200, 200, 0.45);
+    }
+
+    .ad-rule {
+      background: #D4A94B;
+      flex-shrink: 0;
+    }
+
+    .ad-headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+
+    .ad-body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: #C8C8C8;
+    }
+
+    .ad-body em {
+      font-style: normal;
+      color: #D4A94B;
+      font-weight: 500;
+    }
+
+    .ad-footnote {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: rgba(200, 200, 200, 0.40);
+      border-left: 1.5px solid rgba(212, 169, 75, 0.30);
+    }
+
+    .ad-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #D4A94B;
+      background: transparent;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 0;
+      letter-spacing: 0.18em;
+    }
+
+    .ad-url {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: rgba(200, 200, 200, 0.35);
+      letter-spacing: 0.06em;
+    }
+
+    .ad-image-placeholder {
+      border: 1px solid #D4A94B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ad-image-placeholder span {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: rgba(212, 169, 75, 0.55);
+      letter-spacing: 0.06em;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════════
+       FORMAT 1 — 1:1  (1080 × 1080)
+       Facebook / Instagram Feed — Square
+       Layout: centered, image floating above copy
+    ════════════════════════════════════════ */
+    #f-1x1 .ad-container {
+      width: 1080px;
+      height: 1080px;
+      background: #0B0B0F;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(212, 169, 75, 0.12);
+    }
+
+    #f-1x1 .ad-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 36px 56px 0;
+    }
+
+    #f-1x1 .ad-brand { font-size: 11px; letter-spacing: 0.28em; }
+    #f-1x1 .ad-kicker { font-size: 11px; letter-spacing: 0.20em; }
+
+    #f-1x1 .ad-image-placeholder {
+      width: 300px;
+      height: 200px;
+      margin: 52px auto 0;
+    }
+
+    #f-1x1 .ad-image-placeholder span { font-size: 11px; padding: 0 16px; }
+
+    #f-1x1 .ad-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 80px;
+      margin-top: 60px;
+    }
+
+    #f-1x1 .ad-rule { width: 48px; height: 1.5px; margin-bottom: 36px; }
+
+    #f-1x1 .ad-headline {
+      font-size: 62px;
+      line-height: 1.08;
+      margin-bottom: 32px;
+    }
+
+    #f-1x1 .ad-body {
+      font-size: 18px;
+      line-height: 1.65;
+      max-width: 780px;
+    }
+
+    #f-1x1 .ad-footnote {
+      margin-top: 24px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      padding-left: 16px;
+    }
+
+    #f-1x1 .ad-cta-row {
+      padding: 0 80px 56px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: auto;
+    }
+
+    #f-1x1 .ad-cta-btn {
+      font-size: 13px;
+      padding: 18px 48px;
+    }
+
+    #f-1x1 .ad-url { font-size: 12px; }
+
+
+    /* ════════════════════════════════════════
+       FORMAT 2 — 4:5  (1080 × 1350)
+       Instagram Feed — Portrait (best performing)
+       Layout: centered, taller copy column, image mid-top
+    ════════════════════════════════════════ */
+    #f-4x5 .ad-container {
+      width: 1080px;
+      height: 1350px;
+      background: #0B0B0F;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(212, 169, 75, 0.12);
+    }
+
+    #f-4x5 .ad-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 44px 64px 0;
+    }
+
+    #f-4x5 .ad-brand { font-size: 11px; letter-spacing: 0.28em; }
+    #f-4x5 .ad-kicker { font-size: 11px; letter-spacing: 0.20em; }
+
+    #f-4x5 .ad-image-placeholder {
+      width: 340px;
+      height: 240px;
+      margin: 56px auto 0;
+    }
+
+    #f-4x5 .ad-image-placeholder span { font-size: 11px; padding: 0 16px; }
+
+    #f-4x5 .ad-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 88px;
+      margin-top: 68px;
+    }
+
+    #f-4x5 .ad-rule { width: 48px; height: 1.5px; margin-bottom: 40px; }
+
+    #f-4x5 .ad-headline {
+      font-size: 66px;
+      line-height: 1.08;
+      margin-bottom: 36px;
+    }
+
+    #f-4x5 .ad-body {
+      font-size: 20px;
+      line-height: 1.70;
+      max-width: 820px;
+    }
+
+    #f-4x5 .ad-footnote {
+      margin-top: 28px;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      padding-left: 16px;
+    }
+
+    #f-4x5 .ad-cta-row {
+      padding: 0 88px 72px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: auto;
+    }
+
+    #f-4x5 .ad-cta-btn {
+      font-size: 13px;
+      padding: 20px 52px;
+    }
+
+    #f-4x5 .ad-url { font-size: 12px; }
+
+
+    /* ════════════════════════════════════════
+       FORMAT 3 — 9:16  (1080 × 1920)
+       Stories / Reels — Full Vertical
+       Layout: headline top, large image mid, CTA pinned bottom
+    ════════════════════════════════════════ */
+    #f-9x16 .ad-container {
+      width: 1080px;
+      height: 1920px;
+      background: #0B0B0F;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(212, 169, 75, 0.12);
+    }
+
+    #f-9x16 .ad-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 72px 0;
+    }
+
+    #f-9x16 .ad-brand { font-size: 13px; letter-spacing: 0.30em; }
+    #f-9x16 .ad-kicker { font-size: 13px; letter-spacing: 0.22em; }
+
+    #f-9x16 .ad-top-copy {
+      padding: 72px 72px 0;
+    }
+
+    #f-9x16 .ad-rule { width: 56px; height: 2px; margin-bottom: 44px; }
+
+    #f-9x16 .ad-headline {
+      font-size: 88px;
+      line-height: 1.05;
+      margin-bottom: 44px;
+    }
+
+    #f-9x16 .ad-body {
+      font-size: 26px;
+      line-height: 1.70;
+    }
+
+    #f-9x16 .ad-footnote {
+      margin-top: 32px;
+      font-size: 17px;
+      letter-spacing: 0.04em;
+      padding-left: 20px;
+    }
+
+    #f-9x16 .ad-image-placeholder {
+      width: 800px;
+      height: 460px;
+      margin: 80px auto 0;
+    }
+
+    #f-9x16 .ad-image-placeholder span { font-size: 14px; padding: 0 24px; }
+
+    /* CTA pinned 120px from bottom */
+    #f-9x16 .ad-cta-row {
+      position: absolute;
+      bottom: 120px;
+      left: 0;
+      right: 0;
+      padding: 0 72px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    #f-9x16 .ad-cta-btn {
+      font-size: 16px;
+      padding: 26px 72px;
+    }
+
+    #f-9x16 .ad-url { font-size: 14px; }
+
+
+    /* ════════════════════════════════════════
+       FORMAT 4 — 16:9  (1920 × 1080)
+       YouTube Pre-roll / Facebook Horizontal
+       Layout: copy left half, image right half
+    ════════════════════════════════════════ */
+    #f-16x9 .ad-container {
+      width: 1920px;
+      height: 1080px;
+      background: #0B0B0F;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      border: 1px solid rgba(212, 169, 75, 0.12);
+    }
+
+    /* Left column */
+    #f-16x9 .ad-left {
+      width: 900px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 80px 96px 80px 96px;
+    }
+
+    #f-16x9 .ad-topbar {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 72px;
+    }
+
+    #f-16x9 .ad-brand { font-size: 12px; letter-spacing: 0.28em; }
+
+    /* vertical divider between brand and kicker */
+    #f-16x9 .ad-topbar-divider {
+      width: 1px;
+      height: 14px;
+      background: rgba(212, 169, 75, 0.30);
+    }
+
+    #f-16x9 .ad-kicker { font-size: 12px; letter-spacing: 0.20em; }
+
+    #f-16x9 .ad-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #f-16x9 .ad-rule { width: 48px; height: 1.5px; margin-bottom: 36px; }
+
+    #f-16x9 .ad-headline {
+      font-size: 72px;
+      line-height: 1.07;
+      margin-bottom: 36px;
+    }
+
+    #f-16x9 .ad-body {
+      font-size: 20px;
+      line-height: 1.70;
+      max-width: 660px;
+    }
+
+    #f-16x9 .ad-footnote {
+      margin-top: 28px;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      padding-left: 16px;
+    }
+
+    #f-16x9 .ad-cta-row {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    #f-16x9 .ad-cta-btn {
+      font-size: 13px;
+      padding: 20px 52px;
+    }
+
+    #f-16x9 .ad-url { font-size: 12px; }
+
+    /* Right column: image */
+    #f-16x9 .ad-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid rgba(212, 169, 75, 0.10);
+      position: relative;
+    }
+
+    #f-16x9 .ad-image-placeholder {
+      width: 760px;
+      height: 700px;
+      border: 1px solid #D4A94B;
+    }
+
+    #f-16x9 .ad-image-placeholder span { font-size: 13px; padding: 0 24px; }
+
+    /* Subtle vertical accent line on far right */
+    #f-16x9 .ad-right::after {
+      content: '';
+      position: absolute;
+      right: 56px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, rgba(212, 169, 75, 0.25), transparent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="format-nav">
+    <a href="#f-1x1">1:1 Feed</a>
+    <a href="#f-4x5">4:5 Feed</a>
+    <a href="#f-9x16">9:16 Story</a>
+    <a href="#f-16x9">16:9 YouTube</a>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════
+       SECTION 1 — 1:1  (1080 × 1080)
+       Facebook / Instagram Feed
+  ════════════════════════════════════════ -->
+  <section id="f-1x1" class="format-section" data-format="1x1">
+    <span class="format-label">1:1 — 1080 × 1080 — Facebook / Instagram Feed</span>
+
+    <div class="ad-container">
+
+      <div class="ad-topbar">
+        <span class="ad-brand">Capital Vault</span>
+        <span class="ad-kicker">Fundability Intelligence</span>
+      </div>
+
+      <div class="ad-image-placeholder">
+        <span>[IMAGE — see midjourney-prompts.md]</span>
+      </div>
+
+      <div class="ad-content">
+        <div class="ad-rule"></div>
+        <h1 class="ad-headline">Banks Score You.<br>You Don't Know How.</h1>
+        <p class="ad-body">There's a profile the bank builds before you walk in. Most operators have never seen it. What's in it determines the answer <em>before you say a word.</em> Yours might already be fixable.</p>
+        <p class="ad-footnote">80% of operators have never seen their fundability profile.</p>
+      </div>
+
+      <div class="ad-cta-row">
+        <a class="ad-cta-btn" href="https://hvac.thecapitalvault.com/">DM Me FUNDED</a>
+        <span class="ad-url">thecapitalvault.com</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       SECTION 2 — 4:5  (1080 × 1350)
+       Instagram Feed — Portrait
+  ════════════════════════════════════════ -->
+  <section id="f-4x5" class="format-section" data-format="4x5">
+    <span class="format-label">4:5 — 1080 × 1350 — Instagram Feed (Portrait)</span>
+
+    <div class="ad-container">
+
+      <div class="ad-topbar">
+        <span class="ad-brand">Capital Vault</span>
+        <span class="ad-kicker">Fundability Intelligence</span>
+      </div>
+
+      <div class="ad-image-placeholder">
+        <span>[IMAGE — see midjourney-prompts.md]</span>
+      </div>
+
+      <div class="ad-content">
+        <div class="ad-rule"></div>
+        <h1 class="ad-headline">Banks Score You.<br>You Don't Know How.</h1>
+        <p class="ad-body">There's a profile the bank builds before you walk in. Most operators have never seen it. What's in it determines the answer <em>before you say a word.</em> Yours might already be fixable.</p>
+        <p class="ad-footnote">80% of operators have never seen their fundability profile.</p>
+      </div>
+
+      <div class="ad-cta-row">
+        <a class="ad-cta-btn" href="https://hvac.thecapitalvault.com/">DM Me FUNDED</a>
+        <span class="ad-url">thecapitalvault.com</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       SECTION 3 — 9:16  (1080 × 1920)
+       Stories / Reels — Full Vertical
+  ════════════════════════════════════════ -->
+  <section id="f-9x16" class="format-section" data-format="9x16">
+    <span class="format-label">9:16 — 1080 × 1920 — Stories / Reels</span>
+
+    <div class="ad-container">
+
+      <div class="ad-topbar">
+        <span class="ad-brand">Capital Vault</span>
+        <span class="ad-kicker">Fundability Intelligence</span>
+      </div>
+
+      <!-- Headline and body sit above the image in 9:16 -->
+      <div class="ad-top-copy">
+        <div class="ad-rule"></div>
+        <h1 class="ad-headline">Banks Score You.<br>You Don't Know How.</h1>
+        <p class="ad-body">There's a profile the bank builds before you walk in. Most operators have never seen it. What's in it determines the answer <em>before you say a word.</em> Yours might already be fixable.</p>
+        <p class="ad-footnote">80% of operators have never seen their fundability profile.</p>
+      </div>
+
+      <!-- Large image in the middle zone -->
+      <div class="ad-image-placeholder">
+        <span>[IMAGE — see midjourney-prompts.md]</span>
+      </div>
+
+      <!-- CTA pinned to bottom -->
+      <div class="ad-cta-row">
+        <a class="ad-cta-btn" href="https://hvac.thecapitalvault.com/">DM Me FUNDED</a>
+        <span class="ad-url">thecapitalvault.com</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       SECTION 4 — 16:9  (1920 × 1080)
+       YouTube Pre-roll / Facebook Horizontal
+  ════════════════════════════════════════ -->
+  <section id="f-16x9" class="format-section" data-format="16x9">
+    <span class="format-label">16:9 — 1920 × 1080 — YouTube Pre-roll / Facebook Horizontal</span>
+
+    <div class="ad-container">
+
+      <!-- LEFT: copy column -->
+      <div class="ad-left">
+
+        <div class="ad-topbar">
+          <span class="ad-brand">Capital Vault</span>
+          <div class="ad-topbar-divider"></div>
+          <span class="ad-kicker">Fundability Intelligence</span>
+        </div>
+
+        <div class="ad-content">
+          <div class="ad-rule"></div>
+          <h1 class="ad-headline">Banks Score You.<br>You Don't Know How.</h1>
+          <p class="ad-body">There's a profile the bank builds before you walk in. Most operators have never seen it. What's in it determines the answer <em>before you say a word.</em> Yours might already be fixable. We reverse-engineer your fundability profile and tell you exactly what the bank sees — before you ever apply.</p>
+          <p class="ad-footnote">80% of operators have never seen their fundability profile.</p>
+
+          <div class="ad-cta-row">
+            <a class="ad-cta-btn" href="https://hvac.thecapitalvault.com/">DM Me FUNDED</a>
+            <span class="ad-url">thecapitalvault.com</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: image column -->
+      <div class="ad-right">
+        <div class="ad-image-placeholder">
+          <span>[IMAGE — see midjourney-prompts.md]</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

@@ -138,6 +138,29 @@ focus: border-color vault-gold
 
 ---
 
+## FBads Funnel Design System
+
+The `/FBads` route uses its own warm design system extracted from the reference (`capital-vault-funnel/FBads.html`). It is completely separate from the vault-black design. All tokens are scoped to `.fbads` in `app/FBads/fbads.css`. Never apply vault-black tokens to this page.
+
+| Token | Value | Use |
+|---|---|---|
+| `--bg` | `#FDFCF8` | Page background |
+| `--bg2` | `#F8F3EA` | Alt section background |
+| `--dark` | `#1C1506` | Hero, case studies, footer, final CTA |
+| `--card` | `#FFFFFF` | Card backgrounds |
+| `--gold` | `#C8960C` | Primary gold accent |
+| `--gold2` | `#E8B420` | Gold gradient highlight |
+| `--text` | `#1C1506` | Body text |
+| `--text-mid` | `#6B5E3A` | Secondary text |
+| `--border` | `#EDE6D2` | Card / section borders |
+| `--green` | `#166534` | Qualified check color |
+| Font | Outfit 400-900 | All text (loaded via next/font) |
+| Radius | `8px` | All elements |
+
+CTAs use `linear-gradient(135deg, #E8B420 0%, #C8960C 100%)` with white text. Button style in `.fbads .btn-gold`. Do not use `.btn-gold` from globals.css on this page.
+
+---
+
 ## Existing Components (reuse — do not rebuild)
 
 | Component | Path | Use |

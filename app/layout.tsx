@@ -37,7 +37,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${sora.variable} scroll-smooth`}
       style={{ scrollBehavior: "smooth" }}
     >
-      <body className="min-h-screen bg-vault-black text-vault-ink font-sans antialiased">
+      <body className="min-h-screen bg-vault-bg text-vault-ink font-sans antialiased selection:bg-vault-gold/30 selection:text-vault-ink">
         {children}
       </body>
     </html>

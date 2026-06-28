@@ -25,7 +25,7 @@ export default function HowWeWork() {
       <div className="container-vault">
         <div className="text-center mb-16 md:mb-24 scroll-reveal">
           <p className="kicker text-vault-gold mb-4">THE PROCESS</p>
-          <h2 className="heading-md text-vault-cream">How We Work</h2>
+          <h2 className="heading-md text-vault-ink">How We Work</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-12">
@@ -36,7 +36,7 @@ export default function HowWeWork() {
                   {step.number}
                 </div>
                 <div className="relative -mt-16">
-                  <h3 className="heading-md text-vault-cream mb-4">
+                  <h3 className="heading-md text-vault-ink mb-4">
                     {step.title}
                   </h3>
                   <p className="text-vault-muted leading-relaxed mb-8">

@@ -41,17 +41,16 @@ export default function FundingMenu() {
   ];
 
   return (
-    <section id="funding" className="section-padding bg-vault-gold/5 border-y border-hairline">
+    <section id="funding" className="section-padding bg-vault-gold/5 border-y border-vault-border">
       <div className="container-vault">
         <div className="flex items-start gap-4 md:gap-6 mb-12 md:mb-16">
           <div className="flex-1 scroll-reveal">
             <p className="kicker text-vault-gold mb-4">CAPITAL TYPES</p>
-            <h2 className="heading-md text-vault-cream">The Capital Menu</h2>
+            <h2 className="heading-md text-vault-ink">The Capital Menu</h2>
           </div>
           <div className="scroll-reveal delay-1 text-right">
-            <div className="inline-block bg-vault-gold text-vault-black px-4 py-2 rounded-full text-sm font-semibold">
-              24-Hour <br />
-              Decisioning
+            <div className="inline-block border border-vault-gold/40 text-vault-gold px-4 py-2 text-sm font-semibold uppercase tracking-wider">
+              24-Hour Decisioning
             </div>
           </div>
         </div>
@@ -60,11 +59,11 @@ export default function FundingMenu() {
           {products.map((product, idx) => (
             <div
               key={product.name}
-              className={`scroll-reveal delay-${(idx % 4) + 1} group border-b border-hairline pb-6 md:pb-8 last:border-b-0 hover:bg-vault-black/30 -mx-6 md:-mx-10 px-6 md:px-10 py-6 md:py-8 rounded-lg transition-colors cursor-pointer`}
+              className={`scroll-reveal delay-${(idx % 4) + 1} group border-b border-vault-border last:border-b-0 -mx-6 md:-mx-10 px-6 md:px-10 py-6 md:py-8 hover:bg-vault-gold/5 transition-colors cursor-pointer`}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
                 <div className="flex-1">
-                  <h3 className="heading-md text-vault-cream mb-2 group-hover:text-vault-gold transition-colors">
+                  <h3 className="heading-md text-vault-ink mb-2 group-hover:text-vault-gold transition-colors">
                     {product.name}
                   </h3>
                   <p className="text-vault-muted leading-relaxed">
@@ -85,7 +84,7 @@ export default function FundingMenu() {
                     <p className="text-xs text-vault-muted uppercase tracking-wider mb-1">
                       Timeline
                     </p>
-                    <p className="text-lg md:text-xl font-serif font-bold text-vault-cream">
+                    <p className="text-lg md:text-xl font-serif font-bold text-vault-ink">
                       {product.timing}
                     </p>
                   </div>

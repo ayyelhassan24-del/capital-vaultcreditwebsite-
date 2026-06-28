@@ -5,7 +5,7 @@ export default function CaseStudy() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="scroll-reveal">
             <p className="kicker text-vault-gold mb-4">CASE STUDY</p>
-            <h2 className="heading-md text-vault-cream mb-8">
+            <h2 className="heading-md text-vault-ink mb-8">
               $850K Equipment Line for HVAC Contractor
             </h2>
 
@@ -48,21 +48,21 @@ export default function CaseStudy() {
 
           <div className="scroll-reveal delay-2">
             <div className="relative">
-              <div className="bg-gradient-to-br from-vault-gold/20 to-vault-gold/5 aspect-square rounded-2xl flex items-center justify-center overflow-hidden border border-hairline">
-                <div className="w-full h-full bg-vault-black/30 flex items-center justify-center text-vault-muted">
-                  <span className="text-center">
-                    <p className="text-sm font-semibold">Case Study Image</p>
-                    <p className="text-xs mt-2">520x520px</p>
-                  </span>
-                </div>
+              <div className="aspect-square overflow-hidden border border-vault-border">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://picsum.photos/seed/hvac-commercial-equipment/520/520"
+                  alt="HVAC commercial equipment"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-vault-black border border-hairline rounded-lg p-6 max-w-xs">
+              <div className="absolute -bottom-6 -right-0 md:-right-6 bg-vault-card border border-vault-gold/30 p-6 max-w-xs">
                 <p className="text-sm text-vault-muted italic mb-3">
                   "They didn't just get me funding. They protected my company
                   and my family."
                 </p>
-                <p className="text-xs font-semibold text-vault-cream">
-                  — Marcus T., HVAC Owner
+                <p className="text-xs font-semibold text-vault-ink">
+                  Marcus T., HVAC Owner
                 </p>
               </div>
             </div>
