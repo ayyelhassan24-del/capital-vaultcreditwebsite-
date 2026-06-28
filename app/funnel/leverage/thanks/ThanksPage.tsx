@@ -46,18 +46,13 @@ export default function ThanksPage({ fontVariable }: { fontVariable: string }) {
         padding: "10px 0",
       }}>
         <div className="wrap nav-in">
-          <a
-            href="https://www.thecapitalvault.com/"
-            style={{
-              textDecoration: "none",
-              fontWeight: 800,
-              fontSize: 17,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-            }}
-          >
-            <span style={{ color: "#fff" }}>Capital</span>
-            <span style={{ color: "var(--gold)" }}> Vault</span>
+          <a href="https://www.thecapitalvault.com/" className="nav-logo">
+            <img
+              src="/assets/logo.png"
+              alt="The Capital Vault"
+              height={48}
+              onError={(e) => { (e.target as HTMLImageElement).src = "/assets/logo.svg"; }}
+            />
           </a>
         </div>
       </nav>
@@ -137,24 +132,25 @@ export default function ThanksPage({ fontVariable }: { fontVariable: string }) {
       {/* FOOTER */}
       <footer className="site-footer">
         <div className="wrap footer-in">
-          <a
-            href="https://www.thecapitalvault.com/"
-            style={{
-              textDecoration: "none",
-              fontWeight: 800,
-              fontSize: 14,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-            }}
-          >
-            <span style={{ color: "rgba(255,255,255,0.85)" }}>Capital</span>
-            <span style={{ color: "var(--gold)" }}> Vault</span>
+          <a href="https://www.thecapitalvault.com/" className="footer-logo">
+            <img
+              src="/assets/logo.png"
+              alt="The Capital Vault"
+              height={44}
+              style={{ width: "auto" }}
+              onError={(e) => { (e.target as HTMLImageElement).src = "/assets/logo.svg"; }}
+            />
           </a>
           <p className="footer-copy">&copy; 2026 The Capital Vault. All rights reserved.</p>
           <nav className="footer-links">
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms of Service</a>
           </nav>
+        </div>
+        <div className="wrap">
+          <p className="footer-disc">
+            This is an advertisement. Individual results vary and are not guaranteed. Approval is not guaranteed within any specific timeframe. Capital access is subject to lender approval, creditworthiness, and business revenue verification. The Capital Vault is a capital advisory firm and is not a direct lender &mdash; we do not make credit decisions or guarantee loan approval. Zero-percent rates refer to promotional APR periods only; standard rates apply upon expiration. Past client results are not indicative of future outcomes. This content is intended for informational purposes and does not constitute financial, legal, or tax advice. This site is not part of the Facebook website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of Meta Platforms, Inc.
+          </p>
         </div>
       </footer>
 
