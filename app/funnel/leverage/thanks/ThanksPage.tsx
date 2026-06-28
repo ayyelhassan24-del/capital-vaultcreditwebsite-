@@ -9,6 +9,24 @@ declare global {
 
 const YT_CHANNEL = "https://www.youtube.com/@AbuCEO";
 
+const STEPS = [
+  {
+    n: "1",
+    title: "Check Your Email",
+    desc: "Your calendar invite and call link are already in your inbox. Accept the invite now so it's locked on your calendar.",
+  },
+  {
+    n: "2",
+    title: "Have Your Numbers Ready",
+    desc: "Know your average monthly revenue and roughly what's in the bank. We use these to show you what you actually qualify for on the call.",
+  },
+  {
+    n: "3",
+    title: "Show Up On Time",
+    desc: "This is a live working session, not a pitch. Be somewhere quiet for the full block so we can map your capital options properly.",
+  },
+];
+
 export default function ThanksPage({ fontVariable }: { fontVariable: string }) {
   useEffect(() => {
     window.fbq?.("track", "Lead", {
@@ -44,8 +62,8 @@ export default function ThanksPage({ fontVariable }: { fontVariable: string }) {
         </div>
       </nav>
 
-      {/* CONFIRMATION */}
-      <section style={{ background: "var(--dark)", padding: "80px 0", textAlign: "center", flex: 1, display: "flex", alignItems: "center" }}>
+      {/* CONFIRMATION HERO */}
+      <section style={{ background: "var(--dark)", padding: "84px 0 72px", textAlign: "center" }}>
         <div className="wrap-sm">
           {/* Check badge */}
           <div style={{
@@ -60,38 +78,59 @@ export default function ThanksPage({ fontVariable }: { fontVariable: string }) {
             </svg>
           </div>
 
+          <div className="sec-eyebrow" style={{ color: "var(--gold2)" }}>Your Call Is Confirmed</div>
+
           <h1 style={{
-            fontSize: "clamp(28px, 4vw, 46px)", fontWeight: 800,
-            color: "#fff", lineHeight: 1.08, margin: "0 auto 18px",
-            maxWidth: 600, letterSpacing: "-0.015em",
+            fontSize: "clamp(30px, 4.4vw, 50px)", fontWeight: 900,
+            color: "#fff", lineHeight: 1.06, margin: "0 auto 18px",
+            maxWidth: 640, letterSpacing: "-0.02em",
           }}>
-            You&rsquo;re Booked.
+            You&rsquo;re Booked. Now Let&rsquo;s Make It Count.
           </h1>
 
           <p style={{
             fontSize: "clamp(16px, 1.8vw, 18px)",
             color: "rgba(255,255,255,0.65)",
-            maxWidth: 480, margin: "0 auto 36px", lineHeight: 1.65,
+            maxWidth: 520, margin: "0 auto 36px", lineHeight: 1.65,
           }}>
-            Check your email for the calendar invite and call link. That&rsquo;s it &mdash; we&rsquo;ll see you on the call.
+            Your capital assessment call is locked in. The calendar invite and call link are in your email right now. Do these three things before we talk.
           </p>
 
           <a
             href={YT_CHANNEL}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: "inline-flex", alignItems: "center", gap: 10,
-              background: "var(--gold)", color: "#000",
-              fontWeight: 700, fontSize: 15,
-              padding: "13px 26px", borderRadius: 6, textDecoration: "none",
-            }}
+            className="btn-gold"
+            style={{ display: "inline-flex", alignItems: "center", gap: 10, width: "auto", maxWidth: "none" }}
           >
             Watch @AbuCEO while you wait
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
+        </div>
+      </section>
+
+      {/* WHAT HAPPENS NEXT */}
+      <section className="sec" style={{ flex: 1 }}>
+        <div className="wrap tc">
+          <div className="sec-eyebrow">Before The Call</div>
+          <h2 className="sec-title" style={{ maxWidth: 720, margin: "0 auto 16px" }}>
+            Three Things That Decide What You Walk Away With
+          </h2>
+          <p className="sec-sub" style={{ maxWidth: 560, margin: "0 auto" }}>
+            Operators who do these get a real funding plan on the call. The ones who don&rsquo;t get a reschedule.
+          </p>
+
+          <div className="steps-grid" style={{ textAlign: "left" }}>
+            {STEPS.map((s) => (
+              <div key={s.n} className="step-card">
+                <div className="step-num">{s.n}</div>
+                <div className="step-title">{s.title}</div>
+                <div className="step-desc">{s.desc}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
