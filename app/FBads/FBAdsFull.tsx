@@ -5,7 +5,9 @@ import { useRouter } from "next/navigation";
 import Script from "next/script";
 import "./fbads.css";
 
-const THANKS_URL = "https://www.thecapitalvault.com/thanks";
+// www.thecapitalvault.com only proxies the exact /FBads path to this app, so the
+// post-booking redirect must target the dark app directly or it 404s.
+const THANKS_URL = "https://capital-vault.vercel.app/thanks";
 const ICLOSED_ORIGIN = "https://app.iclosed.io";
 
 export interface Variant {
@@ -81,6 +83,66 @@ export default function FBAdsFull({ variant, fontVariable }: { variant: Variant;
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Bind the VSL player to the Meta pixel so we can build audiences off
+  // who actually watches — play + 25/50/75/95% watch milestones.
+  useEffect(() => {
+    const w = window as unknown as {
+      _wq?: unknown[];
+      fbq?: (...a: unknown[]) => void;
+    };
+    w._wq = w._wq || [];
+    w._wq.push({
+      id: "gbn18kl7hv",
+      onReady: (video: { bind: (e: string, cb: (...a: never[]) => void) => void }) => {
+        const fire = (event: string) => w.fbq?.("trackCustom", event);
+        // Distinct named events per milestone so each is selectable in Meta
+        // Events Manager for custom audiences and conversions.
+        const milestones: Array<[number, string]> = [
+          [25, "VSLView25"],
+          [50, "VSLView50"],
+          [75, "VSLView75"],
+          [95, "VSLView95"],
+        ];
+        const hit: Record<number, boolean> = {};
+        let played = false;
+        video.bind("play", () => {
+          if (played) return;
+          played = true;
+          fire("VSLPlay");
+        });
+        video.bind("percentwatchedchanged", ((pct: number) => {
+          const p = Math.round(pct * 100);
+          for (const [m, name] of milestones) {
+            if (p >= m && !hit[m]) {
+              hit[m] = true;
+              fire(name);
+              if (m === 50)
+                w.fbq?.("track", "ViewContent", { content_name: "FBads VSL 50%" });
+            }
+          }
+        }) as (...a: never[]) => void);
+      },
+    });
+  }, []);
+
+  // Fire a pixel event on every "Schedule a Call" CTA click. The CTAs are
+  // bare #book-call anchors, so without this the click is invisible to Meta —
+  // delegated listener catches all of them (hero, nav, mid-page, final CTA).
+  useEffect(() => {
+    const w = window as unknown as { fbq?: (...a: unknown[]) => void };
+    function onClick(e: MouseEvent) {
+      const target = (e.target as HTMLElement | null)?.closest(
+        'a[href="#book-call"]'
+      );
+      if (!target) return;
+      w.fbq?.("trackCustom", "BookCallClick");
+      // Standard event so it's selectable for campaign optimization in Meta.
+      w.fbq?.("track", "InitiateCheckout", { content_name: "FBads Book Call" });
+    }
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
   useEffect(() => {
     function handleMessage(event: MessageEvent) {
       if (!event.origin.includes("iclosed.io")) return;
@@ -95,6 +157,7 @@ export default function FBAdsFull({ variant, fontVariable }: { variant: Variant;
           data?.event === "booking_complete" ||
           data?.status === "confirmed" ||
           data?.action === "booking_complete";
+        // The Lead conversion fires on the /thanks page (single source of truth).
         if (isBookingDone) window.location.href = THANKS_URL;
       } catch {
         // non-JSON messages from the widget — ignore
@@ -106,6 +169,8 @@ export default function FBAdsFull({ variant, fontVariable }: { variant: Variant;
 
   return (
     <div className={`fbads ${fontVariable}`}>
+
+      <Script src="https://fast.wistia.com/assets/external/E-v1.js" strategy="afterInteractive" />
 
       {/* NAV */}
       <nav className="nav" ref={navRef}>
@@ -142,12 +207,12 @@ export default function FBAdsFull({ variant, fontVariable }: { variant: Variant;
         </div>
         <div className="wrap">
           <div className="video-wrap">
-            <iframe
-              src="https://fast.wistia.net/embed/iframe/gbn18kl7hv"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              title="Capital Vault — Growth Capital Overview"
-            />
+            <div
+              className="wistia_embed wistia_async_gbn18kl7hv videoFoam=true"
+              style={{ height: "100%", width: "100%" }}
+            >
+              &nbsp;
+            </div>
           </div>
         </div>
       </section>
