@@ -53,6 +53,27 @@ export default function FunnelForm({ source, campaign, redirectPath, ctaLabel = 
     setIsSubmitting(true);
     try {
       await submitToGHL({ ...formData, source, campaign }, turnstileToken.current);
+      // PostHog: tie this anonymous ad-click session to a named lead + tag the ad variant
+      const ph = typeof window !== "undefined" ? (window as { posthog?: any }).posthog : undefined;
+      if (ph) {
+        const p = new URLSearchParams(window.location.search);
+        ph.identify(formData.email, {
+          name: formData.name,
+          phone: formData.phone,
+          revenue: formData.revenue,
+        });
+        ph.capture("lead_submitted", {
+          source,
+          campaign,
+          variant: p.get("v"),
+          revenue: formData.revenue,
+          utm_source: p.get("utm_source"),
+          utm_medium: p.get("utm_medium"),
+          utm_campaign: p.get("utm_campaign"),
+          utm_content: p.get("utm_content"),
+          utm_term: p.get("utm_term"),
+        });
+      }
       router.push(redirectPath);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Submission failed.";
